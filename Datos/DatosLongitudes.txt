@@ -1,0 +1,7 @@
+boca_cerrada
+ojoI_abierto
+ojoD_abierto
+cejaI_normal
+cejaD_normal
+emocion_neutro
+rotacion_nula

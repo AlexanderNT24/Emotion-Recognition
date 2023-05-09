@@ -1,0 +1,29 @@
+El proyecto se basa en la creación de un personaje 3D que es controlado con inteligencia artificial, esto con la ayuda de la libreria mediapipe, la cual reconoce y brinda puntos especiales en un rostro. 
+
+Links importantes:
+
+Main python
+https://www.freecodecamp.org/espanol/news/python-if-name-main/
+
+POO Python:
+https://www.tutorialesprogramacionya.com/pythonya/detalleconcepto.php?punto=45&codigo=45&inicio=30
+https://www.delftstack.com/es/howto/python/self-in-python/
+
+Pafy:
+https://pypi.org/project/pafy/
+
+Opencv
+https://opencv.org/
+
+Mediapipe
+https://google.github.io/mediapipe/solutions/face_mesh.html
+
+Sockets
+https://docs.python.org/es/3/howto/sockets.html
+ - Encode y Decode
+   https://docs.python.org/3/library/codecs.html
+
+
+
+
+
