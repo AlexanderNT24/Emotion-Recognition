@@ -32,18 +32,18 @@ def analize_video(capture,mediap_draw_points,draw_points,mediap_face_mesh,face_m
         #Si encuentra un rostro        
         if results.multi_face_landmarks:
             #Para todos los rostros detectados
-            for rostros in results.multi_face_landmarks:
+            for faces in results.multi_face_landmarks:
                 #Dibujamos las conecciones de la malla
                 if show_mesh:
-                    mediap_draw_points.draw_landmarks(frame,rostros,mediap_face_mesh.FACEMESH_CONTOURS,draw_points,draw_points)
+                    mediap_draw_points.draw_landmarks(frame,faces,mediap_face_mesh.FACEMESH_CONTOURS,draw_points,draw_points)
                 #Puntos rostro detectado
-                for puntoID,puntos in enumerate (rostros.landmark):
+                for point_id,points in enumerate (faces.landmark):
                     #Alto y ancho de la ventana
                     altoVentana, anchoVentana,variable=frame.shape
-                    posx=int(puntos.x*anchoVentana)
-                    posy=int(puntos.y*altoVentana)
+                    position_x=int(points.x*anchoVentana)
+                    position_y=int(points.y*altoVentana)
                     #Apilamos los puntos faciales en una lista con sus coordenadas
-                    listaPuntosFaciales.append([puntoID,posx,posy])
+                    listaPuntosFaciales.append([point_id,position_x,position_y])
                     if len(listaPuntosFaciales)==468:
                         facial_analysis_object=AnalisisFacial(listaPuntosFaciales,altoVentana,anchoVentana)
                         show_rotation_axes(listaPuntosFaciales,frame,altoVentana)
@@ -65,8 +65,7 @@ def analize_video(capture,mediap_draw_points,draw_points,mediap_face_mesh,face_m
     analyze_data(estate_array)
                
 def analyze_data(vectorEstado):
-    tiempo = np.arange(len(vectorEstado)) + 1
-    plt.plot(tiempo,vectorEstado)
+    plt.plot(vectorEstado)
     plt.title('EMOCIONES')
     plt.xlabel('TIEMPO')
     plt.ylabel('EMOCIÓN')
